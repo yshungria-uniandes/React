@@ -14,7 +14,7 @@ export const GifApp = () => {
     return (
         <>
 
-            <h1>GifExpertApp</h1>
+            <h1>Gif App developed by Yojan </h1>
 
     
             <AddCategory 
