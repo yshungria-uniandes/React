@@ -2,21 +2,16 @@
 
 import { useState } from "react";
 
-function ListGroup() {
+// interface ListGroupProps
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: ListGroupProps) {
   // State
   const [selectedIndex, setSelectedIndex] = useState<number | null>(-1);
 
-  const items = [
-    "New York",
-    "Los Angeles",
-    "Chicago",
-    "Houston",
-    "Phoenix",
-    "Philadelphia",
-    "San Antonio",
-    "San Diego",
-    "Dallas",
-  ];
   // items = [];
 
   // if (items.length === 0) {
@@ -36,7 +31,7 @@ function ListGroup() {
 
   return (
     <>
-      <h1>List Group</h1>
+      <h1>{heading}</h1>
       {message}
       <ul className="list-group">
         {items.map((item, index) => (
