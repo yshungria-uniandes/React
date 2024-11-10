@@ -1,6 +1,5 @@
 // Component Name: Message
 // PascalCasings
-
 function Message() {
     // JSX: JavaScript XML
     const name = "Yojan";
