@@ -6,9 +6,11 @@ import { useState } from "react";
 interface ListGroupProps {
   items: string[];
   heading: string;
+  // (items: string[]): void;
+  onSelectedItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: ListGroupProps) {
+function ListGroup({ items, heading, onSelectedItem }: ListGroupProps) {
   // State
   const [selectedIndex, setSelectedIndex] = useState<number | null>(-1);
 
@@ -42,7 +44,10 @@ function ListGroup({ items, heading }: ListGroupProps) {
                 ? "list-group-item active"
                 : "list-group-item"
             }
-            onClick={() => setSelectedIndex(index)}
+            onClick={() => {
+              setSelectedIndex(index);
+              onSelectedItem(item);
+            }}
           >
             {item}
           </li>

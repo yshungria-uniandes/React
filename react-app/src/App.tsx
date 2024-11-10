@@ -14,9 +14,17 @@ function App() {
     "Dallas",
   ];
 
+  const handleSelectedItem = (item: string) => {
+    console.log("Selected item", item);
+  };
+
   return (
     <div>
-      <ListGroup items={items} heading="Cities" />
+      <ListGroup
+        items={items}
+        heading="Cities"
+        onSelectedItem={handleSelectedItem}
+      />
       {/* <Message /> */}
     </div>
   );
