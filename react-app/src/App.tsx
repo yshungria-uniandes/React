@@ -1,6 +1,7 @@
 import ListGroup from "./components/ListGroup";
 // import Message from "./Message";
 import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   const items = [
@@ -29,6 +30,14 @@ function App() {
         heading="Cities"
         onSelectedItem={handleSelectedItem}
       />
+      <Button
+        onClick={() => {
+          console.log("Button clicked");
+        }}
+        color="success"
+      >
+        My button
+      </Button>
       {/* <Message /> */}
     </div>
   );
