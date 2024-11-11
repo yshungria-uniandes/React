@@ -1,5 +1,6 @@
 import ListGroup from "./components/ListGroup";
 // import Message from "./Message";
+import Alert from "./components/Alert";
 
 function App() {
   const items = [
@@ -20,6 +21,9 @@ function App() {
 
   return (
     <div>
+      <Alert>
+        Hello, Welcome to the <span>United States</span>
+      </Alert>
       <ListGroup
         items={items}
         heading="Cities"
