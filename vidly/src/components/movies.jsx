@@ -23,17 +23,18 @@ class Movies extends Component {
 
   render() {
     const { length: count } = this.state.movies;
-    const infoBar =
-      count !== 0 ? `Showing ${count} movies` : "There are no movies to show";
+    const infoBar = count ? `Showing ${count} movies` : "No movies available";
 
     return (
       <div className="container mt-4">
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <h2>Movies List</h2>
-          <span className="badge bg-info fs-5">{infoBar}</span>
+          <h2 className="text-primary">Movies List</h2>
+          <span className={`badge ${count ? 'bg-info' : 'bg-secondary'} fs-5`}>
+            {infoBar}
+          </span>
         </div>
         
-        {count !== 0 && (
+        {count ? (
           <table className="table table-striped table-hover">
             <thead className="table-dark">
               <tr>
@@ -63,13 +64,18 @@ class Movies extends Component {
                       className="btn btn-danger btn-sm"
                       onClick={() => this.handleDelete(movie)}
                     >
-                      Delete
+                      <i className="bi bi-trash-fill"></i> Delete
                     </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+        ) : (
+          <div className="alert alert-warning text-center mt-4">
+            <i className="bi bi-exclamation-triangle-fill me-2"></i>
+            No movies to show. Please add new movies.
+          </div>
         )}
       </div>
     );
