@@ -18,5 +18,5 @@ export default function AccordionItem({ num, title, curOpen, onOpen, children })
       </div>
     );
 }
-  
+
 
